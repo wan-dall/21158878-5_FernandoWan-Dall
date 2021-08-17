@@ -32,6 +32,16 @@ switch ($uri) {
     <header>
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
             <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="32" viewBox="0 0 40 32">
+                    <title>Fulano Doces</title>
+                    <g transform="matrix(1 0 0 1 20 15)" style="" id="90191ff3-22b7-40b6-b4d8-c88d3a949d12">
+                        <rect fill="#000000" x="-18" y="-16" width="42" height="34"></rect>
+                        <text font-family="Arial" font-size="27" font-style="normal" font-weight="700" text-decoration="underline" style="fill: rgb(255,255,255); opacity: 1; white-space: pre;">
+                            <tspan x="-14.52" y="9.42" >F</tspan>
+                            <tspan x="1.3" y="9.42" >D</tspan>
+                        </text>
+                    </g>
+                </svg>
                 <span class="fs-4">Fulano Doces</span>
             </a>
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
