@@ -8,6 +8,6 @@
     </div>
 
     <div class="col-12 mt-5 text-center">
-        <a href="/" class="btn btn-primary">Ir para home</a>
+        <a href="?p=" class="btn btn-primary">Ir para home</a>
     </div>
 </div>

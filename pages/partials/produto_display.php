@@ -6,7 +6,7 @@
             <div class="card mb-4 rounded-3 shadow">
                 <div class="card-body">
                     <div class="pb-2">
-                        <img src="/images/produtos/<?php echo $item['img']; ?>" class="img-fluid" alt="IMG" />
+                        <img src="images/produtos/<?php echo $item['img']; ?>" class="img-fluid" alt="IMG" />
                     </div>
                     <h3><?php echo $item['nome']; ?></h3>
                     <h4 class="card-title">
@@ -24,7 +24,7 @@
                             ?>
                         </li>
                     </ul>
-                    <a href="produto/?id=<?php echo $id; ?>" class="w-100 btn btn-lg btn-outline-primary">
+                    <a href="?p=produto&id=<?php echo $id; ?>" class="w-100 btn btn-lg btn-outline-primary">
                         Visualizar
                     </a>
                 </div>

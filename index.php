@@ -2,9 +2,9 @@
 
 require __DIR__ . '/function/functions.php';
 
-$uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+$p = trim(filter_input(INPUT_GET, 'p', FILTER_SANITIZE_STRING));
 
-switch ($uri) {
+switch ($p) {
     case '':
     case 'home':
         $page = 'home.php';
@@ -36,7 +36,7 @@ switch ($uri) {
 <div class="container py-3">
     <header>
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <a href="?p=" class="d-flex align-items-center text-dark text-decoration-none">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="32" viewBox="0 0 40 32">
                     <title>Fulano Doces</title>
                     <g transform="matrix(1 0 0 1 20 15)" style="" id="90191ff3-22b7-40b6-b4d8-c88d3a949d12">
@@ -50,9 +50,9 @@ switch ($uri) {
                 <span class="fs-4">Fulano Doces</span>
             </a>
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                <a class="me-3 py-2 text-dark text-decoration-none" href="/">Home</a>
-                <a class="me-3 py-2 text-dark text-decoration-none" href="quem-somos">Quem Somos</a>
-                <a class="me-3 py-2 text-dark text-decoration-none" href="contato">Contato</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" href="?p=">Home</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" href="?p=quem-somos">Quem Somos</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" href="?p=contato">Contato</a>
             </nav>
         </div>
     </header>

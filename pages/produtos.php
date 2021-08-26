@@ -9,10 +9,10 @@ if ($categoria !== null) {
 ?>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="?p=home">Home</a></li>
         <?php
         if ($categoria !== null) {
-            echo "<li class=\"breadcrumb-item\"><a href=\"produtos\">Produtos</a></li>";
+            echo "<li class=\"breadcrumb-item\"><a href=\"?p=produtos\">Produtos</a></li>";
             echo "<li class=\"breadcrumb-item active\">Categoria '" . ucfirst($categorias[$categoria]['nome']) . "'</li>";
         } else {
             echo "<li class=\"breadcrumb-item active\">Produtos</li>";
@@ -21,7 +21,6 @@ if ($categoria !== null) {
     </ol>
 </nav>
 <?php
-
 $qtdProdutos = count($produtos);
 if ($qtdProdutos) {
     require __DIR__ . '/partials/produto_display.php';

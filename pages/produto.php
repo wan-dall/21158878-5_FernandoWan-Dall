@@ -11,8 +11,8 @@ if (isset($produtos[$id])) {
 ?>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="produtos">Produtos</a></li>
+        <li class="breadcrumb-item"><a href="?p=">Home</a></li>
+        <li class="breadcrumb-item"><a href="?p=produtos">Produtos</a></li>
         <?php
         echo "<li class=\"breadcrumb-item active\">" . ucfirst($produto['nome']) . "</li>";
         ?>
@@ -29,7 +29,7 @@ if (! isset($produtos[$id])) {
 
     <div class="row mt-4">
         <div class="col-lg-4 pb-3">
-            <img src="/images/produtos/<?php echo $produto['img']; ?>" class="img-fluid" alt="IMG" />
+            <img src="images/produtos/<?php echo $produto['img']; ?>" class="img-fluid" alt="IMG" />
         </div>
 
         <div class="col-lg-6 text-center">
@@ -64,14 +64,13 @@ if (! isset($produtos[$id])) {
                     ?>
                     <div class="row gx-2 position-relative">
                         <div class="col-5">
-                            <img src="/images/produtos/<?php echo $produto['img']; ?>" class="img-fluid" alt="IMG" />
+                            <img src="images/produtos/<?php echo $produto['img']; ?>" class="img-fluid" alt="IMG" />
                         </div>
                         <div class="col">
                             <?php echo $produto['nome']; ?>
                             <p class="fw-bold">R$ <?php echo formatPrice($produto['preco']); ?></p>
                         </div>
-                        <a href="produto/?id=<?php echo $idRelacionado; ?>" class="border stretched-link">
-                        </a>
+                        <a href="?p=produto&id=<?php echo $idRelacionado; ?>" class="border stretched-link"></a>
                     </div>
                     <?php
                 }
@@ -88,7 +87,7 @@ if (! isset($produtos[$id])) {
                     }
                     $i++;
                     ?>
-                    <a href="produtos/?categoria=<?php echo $id; ?>" class="text-capitalize text-decoration-none d-block">
+                    <a href="?p=produtos&categoria=<?php echo $id; ?>" class="text-capitalize text-decoration-none d-block">
                         <?php echo $categoria['nome']; ?>
                     </a>
                     <?php
