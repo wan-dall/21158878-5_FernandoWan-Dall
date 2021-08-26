@@ -1,28 +1,39 @@
 <?php
 require __DIR__ . '/../dados/produtos.php';
+require __DIR__ . '/../dados/categorias.php';
 
-$produtos = array_slice($produtos, 0, 4, true);
+// Filtra os destaques para home
+$destaques = array_filter($produtos, static function ($v) {
+    return $v['destaque'] === true;
+});
+// Apenas 4 destaques podem ser exibidos na home
+$produtos = array_slice($destaques, 0, 4, true);
 ?>
-<div class="row row-cols-1 row-cols-md-4 mb-3 text-center">
+<div class="row row-cols-1 mb-3">
+    <div class="col">
+        Produtos em destaque
+    </div>
+</div>
+<?php
+require __DIR__ . '/partials/produto_display.php';
+?>
+<div class="row row-cols-1 mb-3">
+    <div class="col">
+        Categorias
+    </div>
+</div>
+<div class="row row-cols-1 row-cols-md-6 mb-3">
     <?php
-    foreach ($produtos as $id => $item) {
+    foreach ($categorias as $id => $categoria) {
         ?>
         <div class="col">
-            <div class="card mb-2 rounded-3 shadow-sm">
+            <div class="card mb-2 rounded-3 shadow">
                 <div class="card-body">
-                    <div class="py-5">
-                        IMG
+                    <div class="pb-3">
+                        <img src="/images/categorias/<?php echo $categoria['img']; ?>" class="img-fluid" alt="IMG" />
                     </div>
-                    <h2 class="card-title pricing-card-title">
-                        R$ <?php echo $item['preco']; ?>
-                        <small class="text-muted fw-light">/un</small>
-                    </h2>
-                    <ul class="list-unstyled mt-3 mb-3">
-                        <li><?php echo $item['descricao']; ?></li>
-                        <li>detalhes</li>
-                    </ul>
-                    <a href="produto/?id=<?php echo $id; ?>" class="w-100 btn btn-lg btn-outline-primary">
-                        Visualizar
+                    <a href="produtos/?categoria=<?php echo $id; ?>" class="w-100 btn btn btn-outline-primary">
+                        <?php echo $categoria['nome']; ?>
                     </a>
                 </div>
             </div>

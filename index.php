@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/function/functions.php';
+
 $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
 switch ($uri) {
@@ -12,6 +14,9 @@ switch ($uri) {
         break;
     case 'produto':
         $page = 'produto.php';
+        break;
+    case 'produtos':
+        $page = 'produtos.php';
         break;
     case 'quem-somos':
         $page = 'quemsomos.php';
@@ -56,7 +61,7 @@ switch ($uri) {
         require __DIR__ . "/pages/{$page}";
         ?>
     </main>
-    <footer class="footer mt-auto pt-4 pt-md-4 border-top">
+    <footer class="footer mt-4 pt-4 pt-md-4 border-top">
         <div class="row">
             <div class="col-12 col-md text-center">
                 <small class="d-block mb-3 text-muted">
