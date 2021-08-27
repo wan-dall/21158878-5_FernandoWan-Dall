@@ -6,6 +6,7 @@ require __DIR__ . '/../dados/categorias.php';
 $destaques = array_filter($produtos, static function ($v) {
     return $v['destaque'] === true;
 });
+shuffle_assoc($destaques);
 // Apenas 4 destaques podem ser exibidos na home
 $produtos = array_slice($destaques, 0, 4, true);
 ?>

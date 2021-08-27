@@ -9,16 +9,16 @@ $categorias = [
         'nome' => 'tortas',
         'img' => 'categoria_tortas.jpg',
     ],
-    3 => [
-        'nome' => 'sobremesas',
-        'img' => '',
-    ],
     4 => [
-        'nome' => 'docinhos',
-        'img' => '',
-    ],
-    5 => [
         'nome' => 'chocolates',
         'img' => 'categoria_chocolate.jpg',
+    ],
+    5 => [
+        'nome' => 'brigadeiros',
+        'img' => 'categoria_brigadeiros.jpg',
+    ],
+    6 => [
+        'nome' => 'halloween',
+        'img' => 'categoria_halloween.jpg',
     ],
 ];

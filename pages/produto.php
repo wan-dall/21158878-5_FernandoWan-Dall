@@ -6,7 +6,6 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
 if (isset($produtos[$id])) {
     $produto = $produtos[$id];
-    $categoria = $produto['categorias'][0];
 }
 ?>
 <nav aria-label="breadcrumb">
@@ -33,12 +32,21 @@ if (! isset($produtos[$id])) {
         </div>
 
         <div class="col-lg-6 text-center">
-            <h2>Produto <?php echo $produto['nome']; ?></h2>
+            <h2><?php echo $produto['nome']; ?></h2>
             <hr class="col-1 mx-auto" />
             <div>
                 R$
                 <span class="fw-bold fs-3 mt-5"><?php echo formatPrice($produto['preco']); ?></span>
             </div>
+            <p>
+                <?php
+                $produtoCategorias = [];
+                foreach ($produto['categorias'] as $categoria) {
+                    $produtoCategorias[] = $categorias[$categoria]['nome'];
+                }
+                echo implode(', ', $produtoCategorias);
+                ?>
+            </p>
             <div class="border-bottom m-4"></div>
             <p><?php echo $produto['descricao']; ?></p>
         </div>
@@ -48,7 +56,10 @@ if (! isset($produtos[$id])) {
                 <h5 class="fw-bold">Outros produtos relacionados</h5>
                 <hr class="col-1 mx-auto" />
                 <?php
-                $produtos = getProdutosCategoria($categoria, $produtos);
+                $prodCategorias = array_values($produto['categorias']);
+                shuffle($prodCategorias);
+                $produtos = getProdutosCategoria($prodCategorias[0], $produtos);
+                shuffle_assoc($produtos);
                 $produtos = array_slice($produtos, 0, 5, true);
 
                 $i = 0;

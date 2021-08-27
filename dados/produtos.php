@@ -1,14 +1,125 @@
 <?php
 
-$produtos = [];
-
-for ($n = 1; $n <= 10; $n++) {
-    $produtos[$n] = [
-        'nome' => "produto {$n}",
-        'img' => "{$n}.jpg",
-        'destaque' => (bool) mt_rand(0, 1),
-        'preco' => $n * .99,
+$produtos = [
+    [
+        'nome' => "Brigadeiro de Halloween",
+        'img' => "brigadeiro_halloween.jpg",
+        'destaque' => true,
+        'preco' => .99,
         'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
-        'categorias' => [mt_rand(2, 5), 1],
-    ];
-}
+        'categorias' => [4, 5, 6],
+    ],
+    [
+        'nome' => 'Formas de chocolate',
+        'img' => 'formas_chocolate_halloween_1.jpg',
+        'destaque' => false,
+        'preco' => .99,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [4, 6],
+    ],
+    [
+        'nome' => 'Formas de chocolate',
+        'img' => 'formas_chocolate_halloween_2.jpg',
+        'destaque' => false,
+        'preco' => .78,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [4, 6],
+    ],
+    [
+        'nome' => 'Torta de abóbora',
+        'img' => 'small_poumpkin_pie.jpg',
+        'destaque' => true,
+        'preco' => 15,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [2, 6],
+    ],
+    [
+        'nome' => 'Torta de limão',
+        'img' => 'torta_limao.jpg',
+        'destaque' => false,
+        'preco' => 13,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [2],
+    ],
+    [
+        'nome' => 'Torta de bolacha',
+        'img' => 'torta_bolacha.jpg',
+        'destaque' => true,
+        'preco' => 14,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [2],
+    ],
+    [
+        'nome' => 'Torta de maçã',
+        'img' => 'torta_maca.jpg',
+        'destaque' => false,
+        'preco' => 17,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [2],
+    ],
+    [
+        'nome' => 'Torta de nozes',
+        'img' => 'torta_nozes.jpg',
+        'destaque' => true,
+        'preco' => 22,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [2],
+    ],
+    [
+        'nome' => 'Torta de morango',
+        'img' => 'torta_morango.jpg',
+        'destaque' => true,
+        'preco' => 24,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [2],
+    ],
+    [
+        'nome' => 'brigadeiro tradicional com nutella',
+        'img' => 'brigadeiro_1.jpg',
+        'destaque' => true,
+        'preco' => .67,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [5],
+    ],
+    [
+        'nome' => 'cajuzinhos de chocolate',
+        'img' => 'cajuzinhos.jpg',
+        'destaque' => true,
+        'preco' => 1.1,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [4, 5],
+    ],
+    [
+        'nome' => 'brigadeiros coloridos',
+        'img' => 'brigadeiro_2.jpg',
+        'destaque' => false,
+        'preco' => 1.21,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [4, 5],
+    ],
+    [
+        'nome' => 'brigadeiros com morango',
+        'img' => 'brigadeiro_3.jpg',
+        'destaque' => true,
+        'preco' => 1.3,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [4, 5],
+    ],
+    [
+        'nome' => 'bolo de chocolate',
+        'img' => 'bolo_chocolate.jpg',
+        'destaque' => false,
+        'preco' => 21,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [1, 4],
+    ],
+    [
+        'nome' => 'bolo de chocolate de forma',
+        'img' => 'bolo_forma_chocolate.jpg',
+        'destaque' => false,
+        'preco' => 18,
+        'descricao' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus tellus nisi. Suspendisse eget lacus tellus. Quisque gravida dictum lorem in tincidunt. Vivamus nibh quam, maximus eget fermentum et, imperdiet sed velit.",
+        'categorias' => [1, 4],
+    ],
+
+];

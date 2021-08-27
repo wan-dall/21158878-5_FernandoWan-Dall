@@ -22,3 +22,20 @@ function getProdutosCategoria($categoria, array $produtos)
         return in_array($categoria, $v['categorias'], true);
     });
 }
+
+/**
+ * Embaralha um array mantendo seus índices
+ * @param $array
+ */
+function shuffle_assoc(&$array)
+{
+    $keys = array_keys($array);
+    shuffle($keys);
+
+    $shuffled = [];
+    foreach ($keys as $key) {
+        $shuffled[$key] = $array[$key];
+    }
+
+    $array = $shuffled;
+}
