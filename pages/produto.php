@@ -4,27 +4,22 @@ require __DIR__ . '/../dados/categorias.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
-if (isset($produtos[$id])) {
-    $produto = $produtos[$id];
-}
-?>
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="?p=">Home</a></li>
-        <li class="breadcrumb-item"><a href="?p=produtos">Produtos</a></li>
-        <?php
-        echo "<li class=\"breadcrumb-item active\">" . ucfirst($produto['nome']) . "</li>";
-        ?>
-    </ol>
-</nav>
-<?php
-
-if (! isset($produtos[$id])) {
+if (!isset($produtos[$id])) {
 
     echo "<h1>Produto {$id} não encontrado</h1>";
 
 } else {
+    $produto = $produtos[$id];
     ?>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="?p=">Home</a></li>
+            <li class="breadcrumb-item"><a href="?p=produtos">Produtos</a></li>
+            <?php
+            echo "<li class=\"breadcrumb-item active\">" . ucfirst($produto['nome']) . "</li>";
+            ?>
+        </ol>
+    </nav>
 
     <div class="row mt-4">
         <div class="col-lg-4 pb-3">
@@ -37,6 +32,7 @@ if (! isset($produtos[$id])) {
             <div>
                 R$
                 <span class="fw-bold fs-3 mt-5"><?php echo formatPrice($produto['preco']); ?></span>
+                /un
             </div>
             <p>
                 <?php
@@ -79,7 +75,7 @@ if (! isset($produtos[$id])) {
                         </div>
                         <div class="col">
                             <?php echo $produto['nome']; ?>
-                            <p class="fw-bold">R$ <?php echo formatPrice($produto['preco']); ?></p>
+                            <p class="fw-bold">R$ <?php echo formatPrice($produto['preco']); ?>/un</p>
                         </div>
                         <a href="?p=produto&id=<?php echo $idRelacionado; ?>" class="border stretched-link"></a>
                     </div>

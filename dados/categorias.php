@@ -3,7 +3,7 @@
 $categorias = [
     1 => [
         'nome' => 'bolos',
-        'img' => '',
+        'img' => 'categoria_bolos.jpg',
     ],
     2 => [
         'nome' => 'tortas',

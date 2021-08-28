@@ -18,7 +18,7 @@
                             <?php
                             $prodCats = [];
                             foreach ($item['categorias'] as $prodCat) {
-                                $prodCats[] = $categorias[$prodCat]['nome'];
+                                $prodCats[] = "<a href=\"?p=produtos&categoria=$prodCat\" class=\"text-capitalize text-decoration-none text-muted\">{$categorias[$prodCat]['nome']}</a>";
                             }
                             echo implode(', ', $prodCats);
                             ?>
