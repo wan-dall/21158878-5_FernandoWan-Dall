@@ -9,8 +9,8 @@
     <div class="col-lg-6 text-center order-lg-last">
         <p>Telefones para contato e pedidos:</p>
         <p>(99) 99999-9999</p>
-        <div class="col-lg-10 offset-lg-1 mt-md-5 border">
-            AQUI
+        <div class="col-lg-10 offset-lg-1 mt-md-4 border">
+            <img src="../images/mapa.png" alt="mapa" class="img-fluid" />
         </div>
         <div class="border-bottom m-4 d-lg-none"></div>
     </div>
